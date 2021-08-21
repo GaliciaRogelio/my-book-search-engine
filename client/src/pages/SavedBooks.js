@@ -58,6 +58,7 @@ const SavedBooks = () => {
       console.error(err);
     }
   };
+
   // if data isn't here yet, say so
   if (loading) {
     return <h2>LOADING...</h2>;
@@ -94,7 +95,7 @@ const SavedBooks = () => {
                   <p className="small">Authors: {book.authors}</p>
                   {book.link ? (
                     <Card.Text>
-                      <a href={book.link} target="_blank">
+                      <a href={book.link} target="_blank" rel="noopener noreferrer">
                         More Information on Google Books
                       </a>
                     </Card.Text>
@@ -104,7 +105,7 @@ const SavedBooks = () => {
                     className="btn-block btn-danger"
                     onClick={() => handleDeleteBook(book.bookId)}
                   >
-                    Delete this Book
+                    Delete this Book!
                   </Button>
                 </Card.Body>
               </Card>
