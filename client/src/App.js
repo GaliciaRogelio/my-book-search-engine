@@ -12,7 +12,7 @@ import SavedBooks from "./pages/SavedBooks";
 import Navbar from "./components/Navbar";
 
 const httpLink = createHttpLink({
-  uri: "/graphql",
+  uri: '/graphql',
 });
 
 const authLink = setContext((_, { headers }) => {
@@ -29,18 +29,6 @@ const client = new ApolloClient({
   link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
-
-// const client = new ApolloClient({
-//   request: (operation) => {
-//     const token = localStorage.getItem("id_token");
-//     operation.setContext({
-//       headers: {
-//         authorization: token ? `Bearer ${token}` : "",
-//       },
-//     });
-//   },
-//   uri: "/graphql",
-// });
 
 function App() {
   return (
